@@ -114,7 +114,7 @@ You can set this information in `TASK_CONFIGS` of `aloha_scripts/constants.py`. 
    ``` sh
    export CUDA_VISIBLE_DEVICES= 0, 1
    python imitate_episodes_multi_gpu.py  \
-   --task_name zip_tie_insert \
+   --task_name zip_tie \
    --ckpt_dir  <data save dir>  \
    --policy_class TactileACT \
    --kl_weight 10 --chunk_size 100 \
