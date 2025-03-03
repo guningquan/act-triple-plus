@@ -1,0 +1,4 @@
+cam_high: {'center': (320, 240), 'width': 320, 'height': 240, 'angle': 0, 'x1': 160, 'y1': 120, 'x2': 480, 'y2': 360}
+cam_low: {'center': (320, 240), 'width': 320, 'height': 240, 'angle': 0, 'x1': 160, 'y1': 120, 'x2': 480, 'y2': 360}
+cam_left_wrist: {'center': (320, 240), 'width': 320, 'height': 240, 'angle': 0, 'x1': 160, 'y1': 120, 'x2': 480, 'y2': 360}
+cam_right_wrist: {'center': (320, 240), 'width': 320, 'height': 240, 'angle': 0, 'x1': 160, 'y1': 120, 'x2': 480, 'y2': 360}
