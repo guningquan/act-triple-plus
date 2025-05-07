@@ -1,7 +1,16 @@
 ### Task parameters
 
 # DATA_DIR = '/mnt/ssd1/guningquan/Programs_server/act_dataset_checkpoint/dataset'
-DATA_DIR = '/home/ubuntu20/guningquan/Programs_Codes/aloha_related/Dataset_and_Checkpoint/dataset'
+# DATA_DIR = '/home/ubuntu20/guningquan/Programs_Codes/aloha_related/Dataset_and_Checkpoint/dataset'
+
+import os
+if os.getlogin() == 'guningquan':
+    DATA_DIR = '/mnt/ssd1/guningquan/Programs_server/act_dataset_checkpoint/dataset'
+elif os.getlogin() == 'ubuntu20':
+    DATA_DIR = '/home/robot/Dataset_and_Checkpoint/dataset'
+else:
+    raise ValueError(f"Unknown user: {os.getlogin()}")
+
 TASK_CONFIGS = {
 
     'zip_tie_data_collection': {
@@ -70,7 +79,7 @@ PUPPET_GRIPPER_JOINT_CLOSE = -0.2  # @gnq -0.6213 -> 0
 
 ############################ Helper functions ############################
 
-MASTER_GRIPPER_POSITION_NORMALIrrqZE_FN = lambda x: (x - MASTER_GRIPPER_POSITION_CLOSE) / (MASTER_GRIPPER_POSITION_OPEN - MASTER_GRIPPER_POSITION_CLOSE)
+MASTER_GRIPPER_POSITION_NORMALIZE_FN = lambda x: (x - MASTER_GRIPPER_POSITION_CLOSE) / (MASTER_GRIPPER_POSITION_OPEN - MASTER_GRIPPER_POSITION_CLOSE)
 PUPPET_GRIPPER_POSITION_NORMALIZE_FN = lambda x: (x - PUPPET_GRIPPER_POSITION_CLOSE) / (PUPPET_GRIPPER_POSITION_OPEN - PUPPET_GRIPPER_POSITION_CLOSE)
 MASTER_GRIPPER_POSITION_UNNORMALIZE_FN = lambda x: x * (MASTER_GRIPPER_POSITION_OPEN - MASTER_GRIPPER_POSITION_CLOSE) + MASTER_GRIPPER_POSITION_CLOSE
 PUPPET_GRIPPER_POSITION_UNNORMALIZE_FN = lambda x: x * (PUPPET_GRIPPER_POSITION_OPEN - PUPPET_GRIPPER_POSITION_CLOSE) + PUPPET_GRIPPER_POSITION_CLOSE
