@@ -19,7 +19,7 @@ from aloha_scripts.constants import PUPPET_GRIPPER_JOINT_OPEN
 from utils import load_data # data functions
 from utils import sample_box_pose, sample_insertion_pose # robot functions
 from utils import compute_dict_mean, set_seed, detach_dict, calibrate_linear_vel, postprocess_base_action # helper functions
-from policy import ACTPolicy, CNNMLPPolicy, DiffusionPolicy, TactileACTPolicy
+from policy import ACTPolicy, CNNMLPPolicy, DiffusionPolicy, TactileACTPolicy, ACTNormalsPolicy
 from visualize_episodes import save_videos
 from utils import calculate_weights_exponential, calculate_weights_aloha, calculate_weights_gaussian, apply_weights_to_all_l1, calculate_weighted_action
 from detr.models.latent_model import Latent_Model_Transformer
@@ -99,6 +99,29 @@ def main(args):
                          'no_encoder': args['no_encoder'],
                          }
     elif policy_class == 'TactileACT':
+        enc_layers = 4
+        dec_layers = 7
+        nheads = 8
+        policy_config = {'lr': args['lr'],
+                         'num_queries': args['chunk_size'],
+                         'kl_weight': args['kl_weight'],
+                         'hidden_dim': args['hidden_dim'],
+                         'dim_feedforward': args['dim_feedforward'],
+                         'lr_backbone': lr_backbone,
+                         'backbone': backbone,
+                         'enc_layers': enc_layers,
+                         'dec_layers': dec_layers,
+                         'nheads': nheads,
+                         'camera_names': camera_names,
+                         'vq': args['use_vq'],
+                         'vq_class': args['vq_class'],
+                         'vq_dim': args['vq_dim'],
+                         'action_dim': 16,
+                         'no_encoder': args['no_encoder'],
+                         }
+
+
+    elif policy_class == 'ACTNormals':
         enc_layers = 4
         dec_layers = 7
         nheads = 8
@@ -226,6 +249,8 @@ def make_policy(policy_class, policy_config):
         policy = ACTPolicy(policy_config)
     elif policy_class == 'TactileACT':
         policy = TactileACTPolicy(policy_config)
+    elif policy_class == 'ACTNormals':
+        policy = ACTNormalsPolicy(policy_config)
     elif policy_class == 'CNNMLP':
         policy = CNNMLPPolicy(policy_config)
     elif policy_class == 'Diffusion':
@@ -246,6 +271,8 @@ def make_optimizer(policy_class, policy):
     if policy_class == 'ACT':
         optimizer = policy.configure_optimizers()
     elif policy_class == 'TactileACT':
+        optimizer = policy.configure_optimizers()
+    elif policy_class == 'ACTNormals':
         optimizer = policy.configure_optimizers()
     elif policy_class == 'CNNMLP':
         optimizer = policy.configure_optimizers()
@@ -503,6 +530,41 @@ def eval_bc(config, ckpt_name, save_episode=True, num_rollouts=1):
 
                     else:
                         raw_action = all_actions[:, t % query_frequency]
+
+                elif config['policy_class'] == "ACTNormals":
+                    if t % query_frequency == 0:
+                        if vq:
+                            if rollout_id == 0:
+                                for _ in range(10):
+                                    vq_sample = latent_model.generate(1, temperature=1, x=None)
+                                    print(torch.nonzero(vq_sample[0])[:, 1].cpu().numpy())
+                            vq_sample = latent_model.generate(1, temperature=1, x=None)
+                            all_actions = policy(qpos, curr_image, vq_sample=vq_sample)
+                        else:
+                            # e()
+                            all_actions = policy(qpos, curr_image)
+                        # if use_actuator_net:
+                        #     collect_base_action(all_actions, norm_episode_all_base_actions)
+                        if real_robot and BASE_DELAY == 0:  # gnq added
+                            all_actions = torch.cat([all_actions[:, :, :-2], all_actions[:, :, -2:]], dim=2) # @gnq
+                        else:
+                            all_actions = torch.cat(
+                                [all_actions[:, :-BASE_DELAY, :-2], all_actions[:, BASE_DELAY:, -2:]], dim=2)
+                    if temporal_ensemble:
+                        all_time_actions[[t], t:t+num_queries] = all_actions
+                        actions_for_curr_step = all_time_actions[:, t]
+                        actions_populated = torch.all(actions_for_curr_step != 0, axis=1)
+                        actions_for_curr_step = actions_for_curr_step[actions_populated]
+
+                        k = 0.01
+                        exp_weights = np.exp(-k * np.arange(len(actions_for_curr_step)))
+                        exp_weights = exp_weights / exp_weights.sum()
+                        exp_weights = torch.from_numpy(exp_weights).cuda().unsqueeze(dim=1)
+                        raw_action = (actions_for_curr_step * exp_weights).sum(dim=0, keepdim=True)
+
+                    else:
+                        raw_action = all_actions[:, t % query_frequency]
+
                         # if t % query_frequency == query_frequency - 1:
                         #     # zero out base actions to avoid overshooting
                         #     raw_action[0, -2:] = 0

@@ -1,0 +1,11 @@
+{"time":"2025-05-07T15:41:37.809039905+09:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-05-07T15:41:37.809064152+09:00","level":"INFO","msg":"created symlink","path":"/home/robot/Programs_Codes/aloha_related/act-triple-plus/wandb/run-20250507_154137-rlvjdggf/logs/debug-core.log"}
+{"time":"2025-05-07T15:41:37.916664984+09:00","level":"INFO","msg":"created new stream","id":"rlvjdggf"}
+{"time":"2025-05-07T15:41:37.916694881+09:00","level":"INFO","msg":"stream: started","id":"rlvjdggf"}
+{"time":"2025-05-07T15:41:37.916878293+09:00","level":"INFO","msg":"handler: started","stream_id":"rlvjdggf"}
+{"time":"2025-05-07T15:41:37.916956178+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"rlvjdggf"}
+{"time":"2025-05-07T15:41:37.917103096+09:00","level":"INFO","msg":"sender: started","stream_id":"rlvjdggf"}
+{"time":"2025-05-07T15:41:38.299887083+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-07T15:42:00.473423825+09:00","level":"INFO","msg":"stream: closing","id":"rlvjdggf"}
+{"time":"2025-05-07T15:42:00.473459142+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-07T15:42:00.473970199+09:00","level":"INFO","msg":"Stopped system monitor"}

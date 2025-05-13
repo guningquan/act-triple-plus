@@ -13,6 +13,17 @@ else:
 
 TASK_CONFIGS = {
 
+    'zip_tie_data_test': {
+        'dataset_dir': DATA_DIR + '/zip_tie_test',
+        'episode_len': 900,
+        'camera_names': ['cam_high',
+                         # 'cam_low',
+                         'cam_left_wrist',
+                         'cam_right_wrist',
+                         'gel'
+                         ]
+    },
+
     'zip_tie_data_collection': {
         'dataset_dir': DATA_DIR + '/zip_tie_random',
         'episode_len': 900,

@@ -1,0 +1,16 @@
+{"time":"2025-05-07T17:34:47.728726684+09:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-05-07T17:34:47.728740381+09:00","level":"INFO","msg":"created symlink","path":"/home/robot/Programs_Codes/aloha_related/act-triple-plus/wandb/run-20250507_173447-j5arrumw/logs/debug-core.log"}
+{"time":"2025-05-07T17:34:47.834211152+09:00","level":"INFO","msg":"created new stream","id":"j5arrumw"}
+{"time":"2025-05-07T17:34:47.834251108+09:00","level":"INFO","msg":"stream: started","id":"j5arrumw"}
+{"time":"2025-05-07T17:34:47.834326379+09:00","level":"INFO","msg":"sender: started","stream_id":"j5arrumw"}
+{"time":"2025-05-07T17:34:47.834394126+09:00","level":"INFO","msg":"handler: started","stream_id":"j5arrumw"}
+{"time":"2025-05-07T17:34:47.834325389+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"j5arrumw"}
+{"time":"2025-05-07T17:34:48.14155269+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-07T17:35:01.995109136+09:00","level":"INFO","msg":"stream: closing","id":"j5arrumw"}
+{"time":"2025-05-07T17:35:01.995137458+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-07T17:35:01.995576167+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-07T17:35:02.812096303+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-07T17:35:03.035164481+09:00","level":"INFO","msg":"handler: closed","stream_id":"j5arrumw"}
+{"time":"2025-05-07T17:35:03.03522483+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"j5arrumw"}
+{"time":"2025-05-07T17:35:03.035257103+09:00","level":"INFO","msg":"sender: closed","stream_id":"j5arrumw"}
+{"time":"2025-05-07T17:35:03.035355618+09:00","level":"INFO","msg":"stream: closed","id":"j5arrumw"}

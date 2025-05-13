@@ -1,0 +1,16 @@
+{"time":"2025-05-07T16:34:46.939444779+09:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-05-07T16:34:46.939463022+09:00","level":"INFO","msg":"created symlink","path":"/home/robot/Programs_Codes/aloha_related/act-triple-plus/wandb/run-20250507_163446-vsxtymvj/logs/debug-core.log"}
+{"time":"2025-05-07T16:34:47.044844821+09:00","level":"INFO","msg":"created new stream","id":"vsxtymvj"}
+{"time":"2025-05-07T16:34:47.044879088+09:00","level":"INFO","msg":"stream: started","id":"vsxtymvj"}
+{"time":"2025-05-07T16:34:47.044924093+09:00","level":"INFO","msg":"handler: started","stream_id":"vsxtymvj"}
+{"time":"2025-05-07T16:34:47.044918103+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"vsxtymvj"}
+{"time":"2025-05-07T16:34:47.04492385+09:00","level":"INFO","msg":"sender: started","stream_id":"vsxtymvj"}
+{"time":"2025-05-07T16:34:47.358785715+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-07T16:34:49.915920695+09:00","level":"INFO","msg":"stream: closing","id":"vsxtymvj"}
+{"time":"2025-05-07T16:34:49.915972246+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-07T16:34:49.91732269+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-07T16:34:51.054682395+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-07T16:34:51.317183936+09:00","level":"INFO","msg":"handler: closed","stream_id":"vsxtymvj"}
+{"time":"2025-05-07T16:34:51.317253436+09:00","level":"INFO","msg":"sender: closed","stream_id":"vsxtymvj"}
+{"time":"2025-05-07T16:34:51.317221519+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"vsxtymvj"}
+{"time":"2025-05-07T16:34:51.317338365+09:00","level":"INFO","msg":"stream: closed","id":"vsxtymvj"}

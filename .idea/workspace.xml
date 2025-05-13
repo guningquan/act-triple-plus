@@ -7,6 +7,13 @@
     <list default="true" id="401bb4b5-ee7c-4dd4-bba1-0f3a44256db5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aloha_scripts/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/aloha_scripts/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aloha_scripts/robot_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/aloha_scripts/robot_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detr/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/detr/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detr/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/detr/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detr/models/backbone.py" beforeDir="false" afterPath="$PROJECT_DIR$/detr/models/backbone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detr/models/detr_vae.py" beforeDir="false" afterPath="$PROJECT_DIR$/detr/models/detr_vae.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imitate_episodes_multi_gpu.py" beforeDir="false" afterPath="$PROJECT_DIR$/imitate_episodes_multi_gpu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/policy.py" beforeDir="false" afterPath="$PROJECT_DIR$/policy.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +38,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/robot/Programs_Codes/aloha_related/act-triple-plus",
+    "last_opened_file_path": "/run/user/1000/gvfs/sftp:host=10.240.77.20,user=guningquan/mnt/ssd1/guningquan/Programs_server/act-plus-plus",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,7 +89,8 @@
       <option name="presentableId" value="Default" />
       <updated>1740367493010</updated>
       <workItem from="1740367494085" duration="30928000" />
-      <workItem from="1746579532745" duration="88000" />
+      <workItem from="1746579532745" duration="10840000" />
+      <workItem from="1746931359402" duration="2595000" />
     </task>
     <servers />
   </component>

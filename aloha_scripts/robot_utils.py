@@ -22,7 +22,7 @@ class ImageRecorder:
             # 'cam_low',
             'cam_left_wrist',
             'cam_right_wrist',
-            # 'gel',   # @gnq important !
+            'gel',   # @gnq important !
         ]
 
         if init_node:

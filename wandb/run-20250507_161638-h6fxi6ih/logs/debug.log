@@ -1,0 +1,24 @@
+2025-05-07 16:16:38,891 INFO    MainThread:302587 [wandb_setup.py:_flush():68] Current SDK version is 0.19.1
+2025-05-07 16:16:38,891 INFO    MainThread:302587 [wandb_setup.py:_flush():68] Configure stats pid to 302587
+2025-05-07 16:16:38,891 INFO    MainThread:302587 [wandb_setup.py:_flush():68] Loading settings from /home/ubuntu20/.config/wandb/settings
+2025-05-07 16:16:38,891 INFO    MainThread:302587 [wandb_setup.py:_flush():68] Loading settings from /home/robot/Programs_Codes/aloha_related/act-triple-plus/wandb/settings
+2025-05-07 16:16:38,891 INFO    MainThread:302587 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-05-07 16:16:38,891 INFO    MainThread:302587 [wandb_init.py:_log_setup():528] Logging user logs to /home/robot/Programs_Codes/aloha_related/act-triple-plus/wandb/run-20250507_161638-h6fxi6ih/logs/debug.log
+2025-05-07 16:16:38,891 INFO    MainThread:302587 [wandb_init.py:_log_setup():529] Logging internal logs to /home/robot/Programs_Codes/aloha_related/act-triple-plus/wandb/run-20250507_161638-h6fxi6ih/logs/debug-internal.log
+2025-05-07 16:16:38,891 INFO    MainThread:302587 [wandb_init.py:init():644] calling init triggers
+2025-05-07 16:16:38,891 INFO    MainThread:302587 [wandb_init.py:init():650] wandb.init called with sweep_config: {}
+config: {}
+2025-05-07 16:16:38,892 INFO    MainThread:302587 [wandb_init.py:init():680] starting backend
+2025-05-07 16:16:38,892 INFO    MainThread:302587 [wandb_init.py:init():684] sending inform_init request
+2025-05-07 16:16:38,914 INFO    MainThread:302587 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-05-07 16:16:38,914 INFO    MainThread:302587 [wandb_init.py:init():697] backend started and connected
+2025-05-07 16:16:38,917 INFO    MainThread:302587 [wandb_init.py:init():790] updated telemetry
+2025-05-07 16:16:38,937 INFO    MainThread:302587 [wandb_init.py:init():822] communicating run to backend with 90.0 second timeout
+2025-05-07 16:16:39,296 INFO    MainThread:302587 [wandb_init.py:init():874] starting run threads in backend
+2025-05-07 16:16:39,389 INFO    MainThread:302587 [wandb_run.py:_console_start():2374] atexit reg
+2025-05-07 16:16:39,389 INFO    MainThread:302587 [wandb_run.py:_redirect():2224] redirect: wrap_raw
+2025-05-07 16:16:39,389 INFO    MainThread:302587 [wandb_run.py:_redirect():2289] Wrapping output streams.
+2025-05-07 16:16:39,389 INFO    MainThread:302587 [wandb_run.py:_redirect():2314] Redirects installed.
+2025-05-07 16:16:39,391 INFO    MainThread:302587 [wandb_init.py:init():916] run started, returning control to user process
+2025-05-07 16:16:39,392 INFO    MainThread:302587 [wandb_run.py:_config_callback():1279] config_cb None None {'num_steps': 100000, 'eval_every': 2000, 'validate_every': 2000, 'save_every': 2000, 'ckpt_dir': '/home/robot/Dataset_and_Checkpoint/checkpoint/act_plus_plus/test', 'resume_ckpt_path': None, 'episode_len': 900, 'state_dim': 14, 'lr': 1e-05, 'policy_class': 'ACTNormals', 'onscreen_render': False, 'policy_config': {'lr': 1e-05, 'num_queries': 100, 'kl_weight': 10, 'hidden_dim': 512, 'dim_feedforward': 3200, 'lr_backbone': 1e-05, 'backbone': 'resnet18', 'enc_layers': 4, 'dec_layers': 7, 'nheads': 8, 'camera_names': ['cam_high', 'cam_left_wrist', 'cam_right_wrist', 'gel'], 'vq': False, 'vq_class': None, 'vq_dim': None, 'action_dim': 16, 'no_encoder': False}, 'task_name': 'zip_tie', 'seed': 0, 'temporal_ensemble': False, 'camera_names': ['cam_high', 'cam_left_wrist', 'cam_right_wrist', 'gel'], 'real_robot': True, 'load_pretrain': False, 'actuator_config': {'actuator_network_dir': None, 'history_len': None, 'future_len': None, 'prediction_len': None}, 'num_selected': 50}
+2025-05-07 16:16:40,760 WARNING MsgRouterThr:302587 [router.py:message_loop():75] message_loop has been closed

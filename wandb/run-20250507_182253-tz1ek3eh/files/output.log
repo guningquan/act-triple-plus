@@ -1,0 +1,132 @@
+Found 80 hdf5 files
+
+
+Data from: ['/home/robot/Dataset_and_Checkpoint/dataset/zip_tie_random']
+- Train on [79] episodes
+- Test on [1] episodes
+
+
+Found 80 hdf5 files
+Norm stats from: ['/home/robot/Dataset_and_Checkpoint/dataset/zip_tie_random']
+Initializing transformations
+Initializing transformations
+Augment images: False, train_num_workers: 2, val_num_workers: 2
+/home/ubuntu20/miniforge3/envs/aloha/lib/python3.8/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/ubuntu20/miniforge3/envs/aloha/lib/python3.8/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+camera_name cam_left_wrist
+camera_name cam_right_wrist
+Use VQ: False, None, None
+******************************************************************************************************************************************************
+number of parameters: 117.43M
+KL Weight 10
+  0%|                                                                                                                                                                  | 0/100001 [00:00<?, ?it/s]
+Validating
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])
+Validation loss: 114.89332
+pred.shape: torch.Size([4, 3, 480, 480])
+pred.shape: torch.Size([4, 3, 480, 480])

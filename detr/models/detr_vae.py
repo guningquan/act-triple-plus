@@ -6,7 +6,7 @@ import torch
 from torch import nn
 from torch.autograd import Variable
 import torch.nn.functional as F
-from .backbone import build_backbone, build_tactile_backbone, build_CBAM_backbone, build_CBAM_backbone_mask
+from .backbone import build_backbone, build_tactile_backbone, build_CBAM_backbone, build_CBAM_backbone_mask, build_normals_backbone
 from .transformer import build_transformer, TransformerEncoder, TransformerEncoderLayer
 import matplotlib.pyplot as plt
 import numpy as np
@@ -311,6 +311,51 @@ def build(args):
     )
 
     n_parameters = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print("number of parameters: %.2fM" % (n_parameters/1e6,))
+
+    return model
+
+
+
+def build_normals(args):
+    state_dim = 14 # TODO hardcode
+
+    # From state
+    # backbone = None # from state for now, no need for conv nets
+    # From image
+    backbones = []
+    for camera_name in args.camera_names:
+        if 'wrist' in camera_name:
+            # print("camera_name", camera_name)
+            backbone = build_normals_backbone(args)
+            backbones.append(backbone)
+        else:
+            backbone = build_backbone(args)
+            backbones.append(backbone)
+
+    transformer = build_transformer(args)
+
+    if args.no_encoder:
+        encoder = None
+    else:
+        # encoder = build_transformer(args) # gnq comment
+        encoder = build_encoder(args) # gnq add
+
+    model = DETRVAE(
+        backbones,
+        transformer,
+        encoder,
+        state_dim=state_dim,
+        num_queries=args.num_queries,
+        camera_names=args.camera_names,
+        vq=args.vq,
+        vq_class=args.vq_class,
+        vq_dim=args.vq_dim,
+        action_dim=args.action_dim,
+    )
+
+    n_parameters = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print("*"*150)
     print("number of parameters: %.2fM" % (n_parameters/1e6,))
 
     return model

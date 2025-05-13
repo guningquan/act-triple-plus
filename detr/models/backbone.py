@@ -6,6 +6,8 @@ from collections import OrderedDict
 
 import torch
 import torch.nn.functional as F
+from visualpriors import representation_transform, feature_readout
+import torchvision.transforms.functional as TF
 import torchvision
 from torch import nn
 from torchvision.models._utils import IntermediateLayerGetter
@@ -157,6 +159,81 @@ class Joiner(nn.Sequential):
         return out, pos
 
 
+
+class RepresentationAdapter(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.adapter = nn.Sequential(
+            nn.Conv2d(8, 32, kernel_size=3, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(32, 3, kernel_size=3, padding=1),
+        )
+
+    def forward(self, x):
+        x = self.adapter(x)  # [B, 3, 30, 40]
+        x = F.interpolate(x, size=(480, 640), mode='bilinear', align_corners=False)
+        return x
+
+def build_normals_backbone(args):
+    # for attr in vars(args):
+    #     print(f"{attr}: {getattr(args, attr)}")
+    # exit()
+    position_embedding = build_position_encoding(args)
+    train_backbone = args.lr_backbone > 0   # train_backbone = 1
+    return_interm_layers = args.masks       # return_interm_layers = False
+
+    # backbone = Backbone(args.backbone, train_backbone, return_interm_layers, args.dilation) # dilation = False
+    backbone_raw = Backbone(args.backbone, train_backbone, return_interm_layers, args.dilation)
+
+    # Adapter: 8-channel normals -> 3-channel pseudo-RGB
+    class RepresentationAdapter(nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.adapter = nn.Sequential(
+                nn.Conv2d(8, 32, kernel_size=3, padding=1),
+                nn.ReLU(),
+                nn.Conv2d(32, 3, kernel_size=3, padding=1),
+            )
+
+        def forward(self, x):  # x: [B, 8, H, W]
+            x = self.adapter(x)  # [B, 3, H, W]
+            x = F.interpolate(x, size=(480, 640), mode='bilinear', align_corners=False)
+            return x
+
+    class NormalBackboneWrapper(nn.Module):
+        def __init__(self, backbone, device='cuda'):
+            super().__init__()
+            self.backbone = backbone
+            self.device = device
+            self.adapter = RepresentationAdapter().to(device)
+
+            # 反归一化 ImageNet 预处理
+            mean = torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1)
+            std = torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1)
+            self.register_buffer("mean", mean)
+            self.register_buffer("std", std)
+
+        def forward(self, img):  # img: [B, 3, H, W] (已 ImageNet Normalize)
+            img = img * self.std + self.mean  # 恢复至 [0, 1]
+            img_rescaled = img * 2 - 1  # scale to [-1, 1]
+
+            with torch.no_grad():
+                # print("img_rescaled is",img_rescaled.shape)
+                normals = representation_transform(img_rescaled, 'normal', device=img.device)  # [B, 8, 30, 40]
+                # feature_type = 'normal'
+                # pred = feature_readout(img_rescaled, feature_type, device='cuda')  # [B, 3, H', W']
+                # print("pred.shape:",pred.shape)
+            adapted = self.adapter(normals)  # [B, 3, 480, 640]
+            return self.backbone(adapted)
+
+    wrapped_backbone = NormalBackboneWrapper(backbone_raw)
+    model = Joiner(wrapped_backbone, position_embedding)
+    model.num_channels = backbone_raw.num_channels
+
+    return model
+
+
+
 def build_backbone(args):
     # for attr in vars(args):
     #     print(f"{attr}: {getattr(args, attr)}")
@@ -207,6 +284,7 @@ def build_CBAM_backbone_mask(args, window_pos):
 #     model = Joiner(backbone, position_embedding)
 #     model.num_channels = backbone.num_channels
 #     return model
+
 
 
 def build_tactile_backbone(args):
