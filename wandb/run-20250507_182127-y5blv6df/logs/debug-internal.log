@@ -1,8 +1,0 @@
-{"time":"2025-05-07T18:21:27.99347149+09:00","level":"INFO","msg":"using version","core version":"0.19.1"}
-{"time":"2025-05-07T18:21:27.993485706+09:00","level":"INFO","msg":"created symlink","path":"/home/robot/Programs_Codes/aloha_related/act-triple-plus/wandb/run-20250507_182127-y5blv6df/logs/debug-core.log"}
-{"time":"2025-05-07T18:21:28.099707926+09:00","level":"INFO","msg":"created new stream","id":"y5blv6df"}
-{"time":"2025-05-07T18:21:28.099742247+09:00","level":"INFO","msg":"stream: started","id":"y5blv6df"}
-{"time":"2025-05-07T18:21:28.099833735+09:00","level":"INFO","msg":"handler: started","stream_id":"y5blv6df"}
-{"time":"2025-05-07T18:21:28.099859654+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"y5blv6df"}
-{"time":"2025-05-07T18:21:28.099833748+09:00","level":"INFO","msg":"sender: started","stream_id":"y5blv6df"}
-{"time":"2025-05-07T18:21:28.434264915+09:00","level":"INFO","msg":"Starting system monitor"}
