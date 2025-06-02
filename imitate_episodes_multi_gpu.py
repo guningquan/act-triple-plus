@@ -26,7 +26,7 @@ from detr.models.latent_model import Latent_Model_Transformer
 
 # from sim_env import BOX_POSE
 try:
-    from aloha_scripts.sleep_modify import sleep_puppet_robots
+    from aloha_scripts.sleep_plus import sleep_puppet_robots
 except ImportError:
     pass
 

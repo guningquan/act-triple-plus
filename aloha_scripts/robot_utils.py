@@ -23,6 +23,7 @@ class ImageRecorder:
             'cam_left_wrist',
             'cam_right_wrist',
             'gel',   # @gnq important !
+            # 'gel_01',  # @gnq important !
         ]
 
         if init_node:

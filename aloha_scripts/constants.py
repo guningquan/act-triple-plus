@@ -1,8 +1,3 @@
-### Task parameters
-
-# DATA_DIR = '/mnt/ssd1/guningquan/Programs_server/act_dataset_checkpoint/dataset'
-# DATA_DIR = '/home/ubuntu20/guningquan/Programs_Codes/aloha_related/Dataset_and_Checkpoint/dataset'
-
 import os
 if os.getlogin() == 'guningquan':
     DATA_DIR = '/mnt/ssd1/guningquan/Programs_server/act_dataset_checkpoint/dataset'

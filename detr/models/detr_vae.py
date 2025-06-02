@@ -164,6 +164,11 @@ class DETRVAE(nn.Module):
                 features, pos = self.backbones[cam_id](image[:, cam_id])
                 features = features[0] # take the last layer feature
                 pos = pos[0]
+
+                # trainable = any(p.requires_grad for p in self.backbones[cam_id].parameters())
+                # print(f"Backbone {cam_id} is trainable: {trainable}")
+                # exit()
+
                 # if 'gel' in cam_name:
                 #     print(cam_name)
                 #     visualize_features(features)

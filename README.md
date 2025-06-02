@@ -10,7 +10,7 @@ This repository is one of the repositories in the TactileAloha project.  We orga
 - ``aloha_scripts`` Folders for controlling the robot and camera. You can use it to test teleoperation, record datasets, put the robot to sleep, and visualize the data. You can define your task in ``aloha_scripts/constants.py`` 
 - ``detr`` Model definitions
 - ``imitate_episodes_multi_gpu.py`` Train and Evaluate policy  with multiple GPUs
-- ``policy.py`` An adaptor for ACT, DiffusionPolicy, CNNMLP, AND our policy
+- ``policy.py`` An adaptor for ACT, ACTNormalsPolicy, DiffusionPolicy, CNNMLP, and our policy
 - ``utils.py`` Utils such as data loading and helper functions
 
 ---
