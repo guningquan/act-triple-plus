@@ -140,8 +140,7 @@ You can set this information in `TASK_CONFIGS` of `aloha_scripts/constants.py`. 
    ```
 
 ## Note
-1. The author finds that the decoder for tactile input can also be changed from ResNet to U-Net and still achieve good results. The author provides the code to allow readers to evaluate this change.
-Specifically, one can easily comment out lines 393–394 in detr_vae.py and uncomment lines 391–392.
+1. Although we primarily use a ResNet-based tactile decoder in our experiments, the codebase also supports a U-Net variant. Readers are encouraged to experiment with this alternative by modifying lines 391–394 in detr_vae.py.
 2. During deployment, different tasks or platforms may require tuning the aggregation parameters for the inferred action chunks. It is recommended to test these settings on your specific scenario to achieve the best results.
 
 ## 🙏 Acknowledgements
