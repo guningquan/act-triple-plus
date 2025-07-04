@@ -6,7 +6,7 @@ import torch
 from torch import nn
 from torch.autograd import Variable
 import torch.nn.functional as F
-from .backbone import build_backbone, build_tactile_backbone, build_CBAM_backbone, build_CBAM_backbone_mask, build_normals_backbone
+from .backbone import build_backbone, build_unet_backbone, build_CBAM_backbone, build_CBAM_backbone_mask, build_normals_backbone
 from .transformer import build_transformer, TransformerEncoder, TransformerEncoderLayer
 import matplotlib.pyplot as plt
 import numpy as np
@@ -389,7 +389,7 @@ def build_tactile(args):
             backbones.append(backbone)
         elif 'gel' in camera_name:
             # print("unet for tactile info.")
-            # backbone = build_tactile_backbone(args)  # unet
+            # backbone = build_unet_backbone(args)  # unet3
             print("resnet for tactile info.")
             backbone = build_backbone(args)
             backbones.append(backbone)

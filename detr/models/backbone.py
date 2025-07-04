@@ -287,7 +287,7 @@ def build_CBAM_backbone_mask(args, window_pos):
 
 
 
-def build_tactile_backbone(args):
+def build_unet_backbone(args):
 
     position_embedding = build_position_encoding(args)
     # net = smp.DeepLabV3Plus(

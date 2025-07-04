@@ -522,8 +522,8 @@ def eval_bc(config, ckpt_name, save_episode=True, num_rollouts=1):
                         actions_populated = torch.all(actions_for_curr_step != 0, axis=1)
                         actions_for_curr_step = actions_for_curr_step[actions_populated]
 
-                        k = 0.01
-                        exp_weights = np.exp(-k * np.arange(len(actions_for_curr_step)))
+                        d = 0.01
+                        exp_weights = np.exp(-d * np.arange(len(actions_for_curr_step)))
                         exp_weights = exp_weights / exp_weights.sum()
                         exp_weights = torch.from_numpy(exp_weights).cuda().unsqueeze(dim=1)
                         raw_action = (actions_for_curr_step * exp_weights).sum(dim=0, keepdim=True)
@@ -556,8 +556,8 @@ def eval_bc(config, ckpt_name, save_episode=True, num_rollouts=1):
                         actions_populated = torch.all(actions_for_curr_step != 0, axis=1)
                         actions_for_curr_step = actions_for_curr_step[actions_populated]
 
-                        k = 0.01
-                        exp_weights = np.exp(-k * np.arange(len(actions_for_curr_step)))
+                        d = 0.01
+                        exp_weights = np.exp(-d * np.arange(len(actions_for_curr_step)))
                         exp_weights = exp_weights / exp_weights.sum()
                         exp_weights = torch.from_numpy(exp_weights).cuda().unsqueeze(dim=1)
                         raw_action = (actions_for_curr_step * exp_weights).sum(dim=0, keepdim=True)
@@ -598,12 +598,12 @@ def eval_bc(config, ckpt_name, save_episode=True, num_rollouts=1):
                         actions_for_curr_step = actions_for_curr_step[actions_populated]
 
 
-                        k = 0.01  # 0.002
+                        d = 0.01  # 0.002
                         num_selected = config['num_selected']
                         if len(actions_for_curr_step) < num_selected:
                             num_selected = len(actions_for_curr_step)
 
-                        exp_weights = np.exp(k * np.arange(num_selected))
+                        exp_weights = np.exp(d * np.arange(num_selected))
                         exp_weights = exp_weights / exp_weights.sum()
                         exp_weights = torch.from_numpy(exp_weights).cuda().unsqueeze(dim=1)
                         raw_action = (actions_for_curr_step[-num_selected:] * exp_weights).sum(dim=0, keepdim=True)
