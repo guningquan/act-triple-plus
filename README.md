@@ -140,7 +140,7 @@ You can set this information in `TASK_CONFIGS` of `aloha_scripts/constants.py`. 
    ```
 
 ## Note
-1. Although we primarily use a ResNet-based tactile decoder in our experiments, the codebase also supports a U-Net variant. Readers are encouraged to experiment with this alternative by modifying lines 391–394 in detr_vae.py.
+1. Although we primarily use a ResNet-based tactile encoder in the experiments, the codebase also supports a U-Net variant. Readers are encouraged to experiment with this alternative by modifying lines 391–394 in detr_vae.py.
 2. During deployment, different tasks or platforms may require tuning the aggregation parameters for the inferred action chunks. It is recommended to test these settings on your specific scenario to achieve the best results.
 
 ## 🙏 Acknowledgements
